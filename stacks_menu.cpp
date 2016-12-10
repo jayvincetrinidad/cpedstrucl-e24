@@ -61,6 +61,7 @@ void menu(){
 	cout<<"Input a number to push: ";
 	cin>>numberPush;
 	s->push(numberPush);
+	cout<<"Press any key to continue."<<endl;
 	break;
 	
 	case 2: 
@@ -76,7 +77,7 @@ void menu(){
 	break;
 	
 	default:
-	cout<<"Wrong input!";
+	cout<<"Try Again Bes!";
 
 }	
 	getch();
