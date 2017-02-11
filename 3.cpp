@@ -1,7 +1,4 @@
 #include <iostream>
-#include <deque>
-#include <climits>
-#include <vector>
 using namespace std;
 struct Tree
 {
@@ -9,8 +6,7 @@ struct Tree
 	Tree *left;
 	Tree *right;  
 	Tree *parent;  
-};
-
+}
 struct Tree *newTreeNode(int data) 
 {
 	Tree *node = new Tree;
