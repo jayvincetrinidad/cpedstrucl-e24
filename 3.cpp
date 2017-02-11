@@ -3,7 +3,6 @@
 #include <climits>
 #include <vector>
 using namespace std;
-
 struct Tree
 {
 	char data;
@@ -19,17 +18,12 @@ struct Tree *newTreeNode(int data)
 	node->left = NULL;
 	node->right = NULL;
 	node->parent = NULL;
-
 	return node;
 }
-
 struct Tree* insertTreeNode(struct Tree *node, int data)
 {
 	static Tree *p;
 	Tree *retNode;
-
-	//if(node != NULL) p = node;
-
 	if(node == NULL)  {
 	    retNode = newTreeNode(data);
 	    retNode->parent = p;
@@ -45,7 +39,6 @@ struct Tree* insertTreeNode(struct Tree *node, int data)
 	} 
 	return node;
 }
-
 void printTreeInOrder(struct Tree *node)
 {
 	if(node == NULL) return;
@@ -54,16 +47,13 @@ void printTreeInOrder(struct Tree *node)
 	cout << node->data << " ";
 	printTreeInOrder(node->right);
 }
-
 void printTreePostOrder(struct Tree *node)
 {
 	if(node == NULL) return;
-
 	printTreePostOrder(node->left);
 	printTreePostOrder(node->right);
 	cout << node->data << " ";
 }
-
 int main(int argc, char **argv)
 {
 	char ch, ch1, ch2;
@@ -71,9 +61,7 @@ int main(int argc, char **argv)
 	Tree *succ;
 	Tree *pred;
 	Tree *ancestor;
-	char charArr[9] 
-	    = {'A','B','C','D','E','F','G','H','I'};
-
+	char charArr[9] = {'A','B','C','D','E','F','G','H','I'};
 	Tree *root = newTreeNode('F');
 	insertTreeNode(root,'B');
 	insertTreeNode(root,'A');
@@ -86,10 +74,8 @@ int main(int argc, char **argv)
 	cout << "increasing sort order\n";
 	printTreeInOrder(root);
 	cout << endl;
-
 	cout << "post order \n";
 	printTreePostOrder(root);
 	cout << endl;
-
 	return 0;
 }
